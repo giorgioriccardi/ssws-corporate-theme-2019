@@ -8,7 +8,6 @@
 		<meta name="keywords" content="slideshow, reveal, effect, animation, web design, template, demo" />
 		<meta name="author" content="Codrops" />
 		<link rel="shortcut icon" href="favicon.ico">
-		<link rel="stylesheet" type="text/css" href="css/base.css" />
 		<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
 	</head>
 
@@ -101,9 +100,6 @@
 				<button class="action action--close"><svg class="icon icon--close"><use xlink:href="#icon-close"></use></svg></button>
 			</nav>
 		</main>
-		<script src="js/imagesloaded.pkgd.min.js"></script>
-		<script src="js/TweenMax.min.js"></script>
-		<script src="js/demo.js"></script>
 
 		<?php wp_footer(); ?>
 	</body>
