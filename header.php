@@ -30,6 +30,21 @@
 </head>
 
 <body class="loading">
+
+	<div id="header" class="start">
+		<?php 
+		/**
+		 * Displays header image.
+		 *
+		 * @since 4.0.0
+		 */
+		if ( get_header_image() ) : ?>
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+			<img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="">
+		</a>
+		<?php endif; // End header image check. ?>
+	</div>
+
 	<svg class="hidden">
 		<!-- <symbol id="icon-arrow" viewBox="0 0 24 24">
 			<title>arrow</title>
@@ -54,14 +69,32 @@
 	</svg>
 
 	<main>
-			<div class="frame">
-				<header class="codrops-header">
-					<div class="codrops-links">
-						<a class="codrops-icon codrops-icon--prev" href="https://tympanus.net/Development/GridLayoutScrollableContent/" title="Previous Demo"><svg class="icon icon--arrow"><use xlink:href="#icon-arrow"></use></svg></a>
-						<a class="codrops-icon codrops-icon--drop" href="https://tympanus.net/codrops/?p=36043" title="Back to the article"><svg class="icon icon--drop"><use xlink:href="#icon-drop"></use></svg></a>
-					</div>
-					<h1 class="codrops-header__title">Multibox Menu</h1>
-				</header>
-				<p class="info">12 &mdash; 24 May 2019 &middot; Bannockburn &middot; Stirling &middot; UK</p>
-				<a class="github" href="https://github.com/codrops/MultiboxMenu/" title="Find this project on GitHub"><svg class="icon icon--github"><use xlink:href="#icon-github"></use></svg></a>
-			</div>
+		<div class="frame">
+			<header class="codrops-header">
+
+				<div id='header-menu'>
+					<?php
+						/**
+						 * Displays a navigation menu.
+						 *
+						 * @since 3.0.0
+						 */
+						$defaults = array(
+							'theme_location' 	=> 'primary',
+							'container' 			=> 'div',
+							'menu_class' 			=> '',
+							'menu_id' 				=> 'menu'
+						);
+						wp_nav_menu( $defaults );
+					?>
+				</div>
+
+				<div class="codrops-links">
+					<a class="codrops-icon codrops-icon--prev" href="https://tympanus.net/Development/GridLayoutScrollableContent/" title="Previous Demo"><svg class="icon icon--arrow"><use xlink:href="#icon-arrow"></use></svg></a>
+					<a class="codrops-icon codrops-icon--drop" href="https://tympanus.net/codrops/?p=36043" title="Back to the article"><svg class="icon icon--drop"><use xlink:href="#icon-drop"></use></svg></a>
+				</div>
+				<h1 class="codrops-header__title">Multibox Menu</h1>
+			</header>
+			<p class="info">12 &mdash; 24 May 2019 &middot; Bannockburn &middot; Stirling &middot; UK</p>
+			<a class="github" href="https://github.com/codrops/MultiboxMenu/" title="Find this project on GitHub"><svg class="icon icon--github"><use xlink:href="#icon-github"></use></svg></a>
+		</div>

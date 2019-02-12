@@ -27,10 +27,10 @@
 
  		// Create Navigation MENU
  		register_nav_menu( 'primary', esc_html__( 'Main Menu', 'ssws2019' ) );
-    // register_nav_menus( array(
-    // 	'primary' => 'Main Menu',
-    // 	'secondary' => 'Footer Menu',
-    // ) );
+    register_nav_menus( array(
+    	'primary' => 'Main Menu',
+    	'secondary' => 'Footer Menu',
+    ) );
 
  		/*
  		 * Let WordPress manage the document title.
@@ -51,17 +51,6 @@
  			'gallery',
  			'caption',
  		) );
-
-    /*
- 		 * Add active class to current page/menu item
- 		 */
-    function custom_current_menu_item_class($classes, $item){
-      if ( in_array('current-menu-item', $classes) ) {
-        $classes[] = 'aktiv';
-      }
-      return $classes;
-    }
-    add_filter( 'nav_menu_css_class', 'custom_current_menu_item_class', $priority = 10, $accepted_args = 2 );
 
     /**
      * Register widget area.
